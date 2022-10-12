@@ -3,7 +3,7 @@ using StarChart.Data;
 
 namespace StarChart.Controllers
 {
-    [Route ("")][ApiController]
+    [Route("")] [ApiController]
     public class CelestialObjectController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -11,6 +11,16 @@ namespace StarChart.Controllers
         {
             _context = context;
 
+        }
+        [HttpGet ("{id:int}")]
+        public IActionResult GetById(int id)
+        {
+           return Ok(); 
+        }
+        [HttpGet("{name}")]
+        public IActionResult GetByName(string name)
+        {
+            return Ok();
         }
     }
 }
